@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Hub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121213;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .game-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            width: 100%;
+            max-width: 1200px;
+        }
+        
+        .game-card {
+            background-color: #2d2d2d;
+            border-radius: 10px;
+            padding: 1.5rem;
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .game-image {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 1rem;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .game-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .game-description {
+            color: #d7dadc;
+            margin-bottom: 1.25rem;
+            font-size: 0.95rem;
+        }
+        
+        .play-btn {
+            background-color: #538d4e;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            width: 80%;
+            max-width: 200px;
+        }
+        
+        .play-btn:hover {
+            background-color: #6aaa64;
+        }
+        
+        footer {
+            margin-top: 2rem;
+            color: #888;
+            text-align: center;
+            font-size: 0.85rem;
+            padding: 1rem;
+        }
+        
+        /* Media queries for better responsiveness */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .game-container {
+                gap: 1rem;
+            }
+            
+            .game-card {
+                padding: 1.25rem;
+            }
+            
+            .game-title {
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 0.75rem;
+                justify-content: flex-start;
+                padding-top: 2rem;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+                margin-bottom: 1.25rem;
+            }
+            
+            .game-card {
+                padding: 1rem;
+            }
+            
+            .game-title {
+                font-size: 1.2rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .game-description {
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+            }
+            
+            .play-btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Game Hub</h1>
+    <div class="game-container">
+        <div class="game-card" onclick="location.href='Wordle/index.html'">
+            <div class="game-title">WORDLE</div>
+            <div class="game-description">Guess the hidden five-letter word in six tries with color-coded hints.</div>
+            <button class="play-btn">Play Now</button>
+        </div>
+        <div class="game-card" onclick="location.href='Sudoku/index.html'">
+            <div class="game-title">SUDOKU</div>
+            <div class="game-description">Fill the 9×9 grid with numbers so each row, column, and 3×3 box contains 1-9.</div>
+            <button class="play-btn">Play Now</button>
+        </div>
+    </div>
+    <footer>© 2025 Mohit's Game Hub | All games are for entertainment purposes only</footer>
+</body>
+</html>

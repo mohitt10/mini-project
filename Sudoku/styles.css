@@ -1,0 +1,178 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f3f3f3;
+  margin: 0;
+  padding: 10px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: clamp(24px, 8vw, 36px);
+  font-weight: bold;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  gap: 1px;
+  background-color: #000;
+  border: 2px solid #000;
+  margin-bottom: 15px;
+  width: min(90vw, 450px);
+  aspect-ratio: 1/1;
+}
+
+.cell {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  font-size: clamp(16px, 5vw, 24px);
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.cell.fixed {
+  color: #000;
+}
+
+.cell.user-input {
+  color: #3a3a3c;
+}
+
+.cell.selected {
+  background-color: #b5d6fd;
+}
+
+.cell.highlighted {
+  background-color: #e6f2ff;
+}
+
+.cell.error {
+  color: #ff6b6b;
+}
+
+/* Add thicker borders for 3x3 blocks */
+.cell:nth-child(3n) {
+  border-right: 2px solid #000;
+}
+
+.cell:nth-child(9n) {
+  border-right: none;
+}
+
+.cell:nth-child(n+19):nth-child(-n+27),
+.cell:nth-child(n+46):nth-child(-n+54) {
+  border-bottom: 2px solid #000;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 15px;
+  width: min(90vw, 450px);
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.key {
+  flex: 1;
+  height: 45px;
+  border: none;
+  border-radius: 5px;
+  background-color: #d3d6da;
+  font-size: clamp(14px, 4vw, 16px);
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.key.wide {
+  flex: 1.5;
+}
+
+.key.extra-wide {
+  flex: 2;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  width: min(90vw, 450px);
+}
+
+.control-btn {
+  flex: 1;
+  min-width: 80px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #6aaa64;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: clamp(12px, 3vw, 14px);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.control-btn.back {
+  background-color: #c9b458;
+}
+
+.control-btn.hint {
+  background-color: #3d7cb8;
+}
+
+footer {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+}
+
+/* Media queries for different screen sizes */
+@media (max-width: 480px) {
+  body {
+    padding: 5px;
+  }
+  
+  .controls {
+    gap: 5px;
+  }
+  
+  .control-btn {
+    padding: 8px 5px;
+  }
+}
+
+/* Prevent zooming on iOS */
+@media screen and (max-width: 768px) {
+  input, select, textarea {
+    font-size: 16px;
+  }
+}

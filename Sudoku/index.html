@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SUDOKU</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="title">SUDOKU</div>
+    
+    <div class="board" id="board"></div>
+    
+    <div class="keyboard">
+        <div class="keyboard-row">
+            <div class="key" data-key="1">1</div>
+            <div class="key" data-key="2">2</div>
+            <div class="key" data-key="3">3</div>
+            <div class="key" data-key="4">4</div>
+            <div class="key" data-key="5">5</div>
+        </div>
+        <div class="keyboard-row">
+            <div class="key" data-key="6">6</div>
+            <div class="key" data-key="7">7</div>
+            <div class="key" data-key="8">8</div>
+            <div class="key" data-key="9">9</div>
+            <div class="key" data-key="delete">X</div>
+        </div>
+    </div>
+    
+    <div class="controls">
+        <button class="control-btn" id="new-game">New Game</button>
+        <button class="control-btn back" id="back">Back to Menu</button>
+        <button class="control-btn hint" id="hint">Hint (10)</button>
+    </div>
+    
+    <div class="controls">
+        <button class="control-btn back" id="undo">Undo</button>
+    </div>
+    
+    <div id="loading-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(255,255,255,0.8); display: none; justify-content: center; align-items: center; z-index: 999;">
+        <div style="text-align: center;">
+            <div style="font-size: 18px; margin-bottom: 10px; font-weight: bold;">Loading puzzle...</div>
+            <div style="width: 40px; height: 40px; border: 4px solid #f3f3f3; border-top: 4px solid #3d7cb8; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+        </div>
+    </div>
+    
+    <style>
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <footer>© 2025 Mohit's Game Hub | All games are for entertainment purposes only</footer>
+    <script src="script.js"></script>
+</body>
+</html>

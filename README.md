@@ -22,7 +22,7 @@ This uses dosuku api for sudoku grid.
 ### 2. 🔤 Wordle Clone
 
 A browser-based Wordle clone where you guess a 5-letter word in six attempts.
-uses dictionary api for random word selection and word validation.
+Uses dictionary api for random word selection and word validation.
 
 - ✅ Random word selection  
 - ✅ Keyboard interaction  
